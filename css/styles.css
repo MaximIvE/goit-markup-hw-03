@@ -79,6 +79,7 @@ img {
   text-decoration: none;
 }
 .contanier{
+  display: block;
   width: 1200px;
   margin: 0 auto; 
   padding: 0 15px;
@@ -281,12 +282,23 @@ border-radius: 0px 0px 4px 4px;
 
 
 /* -----Portfolio----------- */
+.portfolio-contanier{
+  display: block;
+  padding-top: 47px;
+  padding-bottom: 47px;
+}
 .filter{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
+}
+.filter-item{
+  margin-right: 8px;
 }
 .filter-btn{
   padding: 6px 22px;
@@ -297,6 +309,9 @@ border-radius: 0px 0px 4px 4px;
   color: var(--second-title-color);
   background: var(--background-elements);
 }
+.filter-item:last-child{
+	margin-right: 0;
+}
 .btn-accent{ 
   background: var(--accent-color);
   color: var(--background);
@@ -306,7 +321,26 @@ border-radius: 0px 0px 4px 4px;
   background-color: var(--second-btn-color);
   color: var(--background);
 }
+
+.portfolio-section{
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio-item{
+  box-sizing: border-box;
+  margin-right: 30px;
+  outline: 1px solid #ececec;
+  margin-bottom: 30px;
+}
+.portfolio-item:nth-child(3n){
+  margin-right: 0;
+}
+.portfolio-item:nth-child(n + 7){
+  margin-bottom: 0;
+}
 .portfolio-title{
+  padding-left: 24px;
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -314,6 +348,8 @@ border-radius: 0px 0px 4px 4px;
   color: var(--second-title-color);
 }
 .portfolio-text{
+  padding-left: 24px;
+  margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
