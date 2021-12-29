@@ -2,7 +2,7 @@
   --background: #ffffff;
   --background-elements: #F5F4FA;
   --footer-color: #2F303A;
-  --footer-text: rgba(255, 255, 255, 0.6);
+  --footer-cont-color: rgba(255, 255, 255, 0.6);
   --footer-hover-text-one: rgba(255, 255, 255, 0.8);
   --footer-hover-text-two: rgba(255, 255, 255, 0.4);
   --footer-hover-accent: rgba(33, 149, 243, 0.9);
@@ -83,7 +83,7 @@ img {
   margin: 0 auto; 
   padding: 0 15px;
   box-sizing: border-box; /*Размеры внутри этого блока теперь считаются от края бордера вовнутрь*/
-  outline: 2px solid red;
+  /* outline: 2px solid tomato; */
 }
 
 /* ------------------HEADER------------------- */
@@ -321,32 +321,37 @@ border-radius: 0px 0px 4px 4px;
 }
 /* --------------------FOOTER-------------------- */
 .footer{
-  
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--footer-color);
 }
 .logo-footer{
+  display: block;
   padding-bottom: 20px;
   color: var(--background);
 }
-.footer-adres{
+.footer-list{
+  display: block;
+  padding-bottom: 9px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--background);
 }
-.footer-contacts{
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: var(--footer-text);
+.footer-cont-color{
+  color: var(--background);
 }
-.footer-adres:hover,
-.footer-adres:focus{
+.footer-cont{
+  color: var(--footer-cont-color);
+}
+.footer-list:last-child{
+	padding-bottom: 0;
+}
+.footer-cont-color:hover,
+.footer-cont-color:focus{
   color: var(--footer-hover-text-one);
 }
-.footer-contacts:hover,
-.footer-contacts:focus{
+.footer-cont:hover,
+.footer-cont:focus{
   color: var(--footer-hover-text-two);
 }
