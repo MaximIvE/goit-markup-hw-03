@@ -12,12 +12,35 @@
   --second-title-color: #212121;
   --p-title-color: #757575;  
 }
+/* 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--background);
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--background);
+}
+p,
+h1,
+h2,
+h3{
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+img {
+  display: block;
 }
 /* Общие стили для всех кнопок */
 .btn{
+  display: inline-block;  /*Делает из строчного элемента строчно-блочный чтоб задать вертикальные паддинги*/
   font-family: Roboto;
   border-radius: 4px;
   border: transparent; /* Убирает рамку */
@@ -25,10 +48,13 @@ body {
 }
 /* Убирает маркеры в списках */
 .list {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 /* Убирает нижнее подчеркивание всех ссылок */
 .link {
+  /* display: inline-block; */
   text-decoration: none;
   color: var(--second-title-color);
 }
@@ -52,15 +78,39 @@ body {
   letter-spacing: 0.03em;
   text-decoration: none;
 }
+.contanier{
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 15px;
+  box-sizing: border-box;
+  outline: 2px solid red;
+}
+
 /* ------------------HEADER------------------- */
 .header{
+  box-sizing: border-box;
   background-color: var(--background);
+  border-bottom: 1px solid #ececec;
+}
+.contanier-flexbox{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ececec;
 }
 .logo-header{
   color:var(--second-title-color);
+  margin-right: 93px;
+  }
+.site-nav{
+  display: flex;
+  margin-right: 331px;
 }
 /* Стилизация линков в хедере */
 .site-nav-link{
+  margin-right: 50px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -68,12 +118,24 @@ body {
   text-decoration: none;
   color: var(--second-title-color);
 }
+
+.site-nav-item:not(last-child){
+  outline: 2px solid red;
+}
+
+.contacts{
+  display: flex;
+}
 .contacts-link{
+  margin-right: 50px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--p-title-color); 
+}
+.contacts-link:last-child {
+  outline: 2px solid red;
 }
 .accent{
   color: var(--accent-color);
@@ -90,6 +152,7 @@ body {
 }
 /* --------------------MAIN-------------------- */
 .section-title{
+  margin-top: 0;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -106,27 +169,49 @@ body {
 .hero {
   background-color: var(--footer-color);
   text-align: center;
+  min-height: 600px;
+  padding: 200px 0px;
+
+  /* outline: 2px solid red;  */
+  /* background-color: tomato; */
 }
+
 .main-heading{
+  margin: 0 auto;
+  /* margin-top: 0;
+  margin-bottom: 0; */
+  width: 696px;
+  margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--background);
+
+  /* outline: 2px solid red;  */
+  /* background-color: tomato; */
 }
 .hero-btn{
-  background: var(--accent-color);
+  padding: 10px 32px; /*10 вертикальные 32 гоизонтальные*/
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  background: var(--accent-color);
   color: var(--background);
 }
 .hero-btn:hover{
   background: var(--second-btn-color);
 }
+.specifications{
+  background-color: #4caf50;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .cpecif-title{
+  margin-top: 0;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -135,11 +220,16 @@ body {
   color: var(--second-title-color);
 }
 .specif-text{
+  margin: 0;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--p-title-color);
 }
+/* --------------OCCUPATION------- */
+.occupation{
+}
+
 /* ----------TEAM---------- */
 .team{
   background-color: var(--background-elements);
@@ -147,6 +237,7 @@ body {
   line-height: 1.19;
 }
 .team-title{
+  margin-top: 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -155,6 +246,7 @@ body {
   color: var(--second-title-color)
 }
 .team-text{
+  margin-top: 0;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -170,6 +262,7 @@ body {
   color: var(--second-title-color);
 }
 .filter-btn{
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1,62;
@@ -201,7 +294,7 @@ body {
 }
 /* --------------------FOOTER-------------------- */
 .footer{
-  background-color: var(--footer-color)
+  background-color: var(--footer-color);
 }
 .logo-footer{
   color: var(--background);
@@ -225,11 +318,4 @@ body {
 .footer-contacts:hover,
 .footer-contacts:focus{
   color: var(--footer-hover-text-two);
-}
-
-.contanier{
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200;
-  
 }
