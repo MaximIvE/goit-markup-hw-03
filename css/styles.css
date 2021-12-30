@@ -338,6 +338,9 @@ border-radius: 0px 0px 4px 4px;
 .portfolio-item:nth-child(n + 7){
   margin-bottom: 0;
 }
+.portfolio-img{
+  margin-bottom: 20px;
+}
 .portfolio-title{
   padding-left: 24px;
   margin-bottom: 4px;
