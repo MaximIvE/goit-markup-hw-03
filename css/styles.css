@@ -28,15 +28,18 @@ p,
 h1,
 h2,
 h3{
-    margin: 0;
+  margin: 0;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 /* Общие стили для всех кнопок */
 .btn{
@@ -46,17 +49,10 @@ img {
   border: transparent; /* Убирает рамку */
   cursor: pointer; /*Меняет курсор на палец при наведении*/
 }
-/* Убирает маркеры в списках */
-.list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+
 /* Убирает нижнее подчеркивание всех ссылок */
 .links {
-  /* display: inline-block; */
   text-decoration: none;
-  color: var(--second-title-color);
 }
 .visually-hidden {
   position: absolute;
@@ -79,41 +75,37 @@ img {
   text-decoration: none;
 }
 .contanier{
-  display: block;
   width: 1200px;
   margin: 0 auto; 
   padding: 0 15px;
-  box-sizing: border-box; /*Размеры внутри этого блока теперь считаются от края бордера вовнутрь*/
-  /* outline: 2px solid tomato; */
+   /* outline: 2px solid tomato; */
 }
 
 /* ------------------HEADER------------------- */
 .header{
-  box-sizing: border-box;
   background-color: var(--background);
   border-bottom: 1px solid #ececec;
 }
-.contanier-flexbox{
+.contanier-headline{
   display: flex;
   align-items: center;
   justify-content: end;
   padding-top: 24px;
   padding-bottom: 24px;
-  /* border-bottom: 1px solid #ececec; */
 }
 
-/* У класса <div class="contanier-flexbox"> есть три ребенка:
+/* У класса <div class="contanier-headline"> есть три ребенка:
 1. <a class="logo logo-header">
 2. <nav class="nav">
-  2.1 <ul class=" list site-nav">
+  2.1 <ul class="site-nav">
     2.1.1 <li clas="site-nav-item">
       2.1.1.1 <a class="link site-nav-link"
-3. <ul class="list contacts">
+3. <ul class="contacts">
 */
 
 .logo-header{
   color:var(--second-title-color);
-  margin-right: 94px;    /*----------*/
+  margin-right: auto;
 }
 
 .logo-header:hover,
@@ -129,7 +121,7 @@ img {
 
 .site-nav{
   display: flex;
-  margin-right: 331px;
+  /* margin-right: 331px; */
 }
 .site-nav-item{
   margin-right: 50px;
@@ -151,6 +143,7 @@ img {
 }
 
 .contacts{
+  margin-left: auto;
   display: flex;
   align-items: center;
 }
@@ -184,7 +177,7 @@ img {
 .hero {
   background-color: var(--footer-color);
   text-align: center;
-  padding-TOP: 200px;
+  padding-top: 200px;
   padding-bottom: 200px;
 }
 .main-heading{
@@ -215,18 +208,22 @@ img {
 
 /* -----------------------BENEFITS-------------- */
 .section{
-  box-sizing: border-box;
-  padding-top: 47px;
-  padding-bottom: 47px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.work-section{
+padding-top: 0
+;
 }
 
-.flex-list{
+.benefits-list{
   display: flex;
 }
-.flex-blank{
+.benefits-blank{
   margin-right: 30px;
+  width: calc((100%-90px)/4);
 }
-.flex-blank:last-child{
+.benefits-blank:last-child{
 	margin-right: 0;
 }
 .benefits-title{
@@ -245,12 +242,18 @@ img {
   color: var(--p-title-color);
 }
 /* --------------------SPECIFICATION-------------- */
+.spec-blank{
+  margin-right: 30px;
+}
+.spec-blank:last-child{
+  margin-right: 0;
+}
 /* -----------------------TEAM-------------------- */
 .team{
   background-color: var(--background-elements);
-  padding-bottom: 94px;
 }
 .team-blank{
+background-color: var(--background);
 margin-right: 30px;
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 0px 0px 4px 4px;
@@ -258,8 +261,9 @@ border-radius: 0px 0px 4px 4px;
 .team-blank:last-child{
 	margin-right: 0;
 }
-.team-img{
-  margin-bottom: 30px;
+.team-content{
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .team-title{
@@ -272,7 +276,6 @@ border-radius: 0px 0px 4px 4px;
   color: var(--second-title-color)
 }
 .team-text{
-  margin-bottom: 30px;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -281,37 +284,28 @@ border-radius: 0px 0px 4px 4px;
 }
 
 
-/* -----Portfolio----------- */
-.portfolio-contanier{
-  display: block;
-  padding-top: 47px;
-  padding-bottom: 47px;
-}
+/* -----PORTFOLIO----------- */
 .filter{
   display:flex;
   justify-content: center;
   margin-bottom: 50px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
-  letter-spacing: 0.03em;
-  color: var(--second-title-color);
 }
 .filter-item{
   margin-right: 8px;
+}
+.filter-item:last-child{
+	margin-right: 0px;
 }
 .filter-btn{
   padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1,62;
+  line-height: 1.62;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
   background: var(--background-elements);
 }
-.filter-item:last-child{
-	margin-right: 0px;
-}
+
 .btn-accent{ 
   background: var(--accent-color);
   color: var(--background);
@@ -327,10 +321,14 @@ border-radius: 0px 0px 4px 4px;
   flex-wrap: wrap;
 }
 .portfolio-item{
-  box-sizing: border-box;
   margin-right: 30px;
-  outline: 1px solid #ececec;
   margin-bottom: 30px;
+}
+.portfolio-content{
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
 }
 .portfolio-item:nth-child(3n){
   margin-right: 0;
@@ -338,11 +336,8 @@ border-radius: 0px 0px 4px 4px;
 .portfolio-item:nth-child(n + 7){
   margin-bottom: 0;
 }
-.portfolio-img{
-  margin-bottom: 20px;
-}
+
 .portfolio-title{
-  padding-left: 24px;
   margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
@@ -351,8 +346,6 @@ border-radius: 0px 0px 4px 4px;
   color: var(--second-title-color);
 }
 .portfolio-text{
-  padding-left: 24px;
-  margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
@@ -365,19 +358,20 @@ border-radius: 0px 0px 4px 4px;
   background-color: var(--footer-color);
 }
 .logo-footer{
-  /* display: block;
-  margin-bottom: 20px; */
   color: var(--background);
 }
+.direct-block{
+  margin-top: 20px;
+  font-style: normal;
+}
 .footer-list{
-  display: block;
   margin-bottom: 9px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--background);
 }
-.footer-cont-color{
+.footer-adds{
   color: var(--background);
 }
 .footer-cont{
@@ -386,11 +380,9 @@ border-radius: 0px 0px 4px 4px;
 .footer-list:last-child{
 	margin-bottom: 0;
 }
-.footer-list:first-child{
-	margin-top: 20px; 
-}
-.footer-cont-color:hover,
-.footer-cont-color:focus{
+
+.footer-adds:hover,
+.footer-adds:focus{
   color: var(--footer-hover-text-one);
 }
 .footer-cont:hover,
